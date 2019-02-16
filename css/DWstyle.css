@@ -1,0 +1,298 @@
+/* Date Jan 19 2019 */
+
+:root {
+    --background-color-body: rgba(48, 58, 81, 0.96); /*background color of body*/
+
+    /*Playlist Variables*/
+    --playlistName-color: #616879; /*color of playlist name*/
+    --playlistDesc-color:#F5F5DC; /*color of playlist description text*/
+    --playlist-bottomBorder-color:#F5F5DC; /* color of bottom border for a playlist */
+
+    /*Song card Variables*/
+    --songCard-title-color: #f0f0f0; /*color of title in songCard */
+    --songCard-background-color: #649bb0; /*songCard background color */
+    --songCard-background-colorHover:#7e7836 ; /*songCard background color when hovering */
+    --songCard-button-color: #9eaf6e;/*songCard button color*/
+    --songCard-button-colorHover:rgba(119, 50, 50, 0.91); /*songCard button color when hovering */
+
+    /*Player variables */
+    --playerContainer-button-backgroundColor: rgba(104, 88, 98, 0.56); /*color of player buttons*/
+    --playerContainer-buttonText-color:white; /*color of text inside player buttons*/
+    --playerContainer-title-color:#ffffff;/*color of song name in player Container*/
+    --playerContainer-duration-color:beige; /* color of timer in player container*/
+    --slider-background-color:black;/*background color of volume slider*/
+
+    /*footer variables*/
+    --footer-background-color:rgba(97, 85, 97, 0.99) !important; /*background color of footer*/
+}
+
+body {
+    font-family: Optima, Courier New, Courier, mono;
+    background: var(--background-color-body) linear-gradient(72deg, var(--background-color-body), #685762 90%);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+
+/*playlist styles*/
+
+
+.playlist {
+    padding-top: 100px;
+}
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+#playlistList {
+    width: 100%;
+    margin: 0;
+}
+.playlistName {
+    color: var(--playlistName-color);
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+
+}
+.playlistDesc {
+    color: var(--playlistDesc-color);
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+}
+.playlistCard {
+    height: auto;
+    width: 85%;
+    max-height: 600px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--playlist-bottomBorder-color);
+    margin: 0 auto;
+}
+.meta {
+
+    width: 100%;
+    margin: 0 auto;
+}
+.playlistCard img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Player Styles*/
+
+.playerCont {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    padding: 40px 0;
+    z-index: 100;
+    background-position: center;
+    background-size: cover;
+    clip-path: inset(0px 0px 80px 0px);
+}
+.playerCont .playerInnerCont {
+    width: 96%;
+    padding: 2%;
+    margin: 50px 0;
+}
+.playerCont .heading {
+    height: 35px !important;
+    background-color: transparent;
+
+}
+.playerCont .title {
+
+    display: inline-block;
+    font-family: 'Poiret One', cursive;
+    margin-top: 0;
+    padding-top: -22px;
+    padding-left: 2px;
+    color: var(--playerContainer-title-color);
+    font-size: 22px;
+
+}
+.playerCont .duration {
+    display: inline-block;
+    color: var(--playerContainer-duration-color);
+    font-weight: 100;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(12px) translateX(-15px);
+    float: right;
+    margin-right: 12px;
+    font-size: 16px;
+}
+.playerCont .wave {
+    height: 80px;
+    background-color: transparent;
+
+}
+.playerCont .btnCont {
+    text-align: center;
+    background-color: transparent;
+}
+.playerCont button {
+    margin: 10px 2px;
+    background-color: var(--playerContainer-button-backgroundColor);
+    border: none;
+    padding: 7px 15px;
+    font-family: 'Optima', cursive;
+    color: var(--playerContainer-buttonText-color);
+    font-size: 15px;
+}
+.playerCont button:hover {
+    background-color: var(--playlistName-color);
+    transition: background-color 300ms;
+}
+.playerCont button i {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.wave {
+    height: 90px !important;
+}
+#slider {
+    width: 150px;
+    height: 15px;
+    margin: 0 auto;
+}
+#slider.ui-slider {
+    background-color: var(--slider-background-color );
+}
+
+#slider .ui-slider-handle {
+    display: none;
+}
+#backgroundMN {
+    background: url("../images/backgroundMN.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#backgroundBL {
+    background: url("../images/backgroundBL.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#backgroundJBK {
+    background: url("../images/backgroundJBK.jpg") no-repeat center;
+    background-size: cover;
+}
+
+/*song card styles*/
+
+.songCard {
+    background-color: var(--songCard-background-color);
+    height: 50px;
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: inset 10px 10px 50px 5px #c9bd3e;
+}
+.songCard:hover {
+    background-color: var(--songCard-background-colorHover);
+    cursor: pointer;
+    transition: transform 300ms;
+}
+.songCard .title {
+    font-family: 'Poiret One', cursive;
+    color: var(--songCard-title-color);
+    font-size: .9em;
+    font-weight: 900;
+    width: 90%;
+    margin: auto;
+    padding-top: 5px;
+    text-align: center;
+    transform: translateY(10px);
+}
+
+.songCard .btn {
+    float: left;
+    background-color: var(--songCard-button-color);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 0;
+    display: block;
+    padding: 0;
+}
+.songCard .btn:hover {
+    background-color: var(--playerContainer-button-backgroundColor);
+    transition: background-color 300ms;
+}
+.songCard .btn i {
+    font-size: 25px;
+    color: rgba(55, 53, 53, 0.91);
+    display: inline-block;
+}
+.songCard .btn:hover i {
+    color: var(--songCard-button-colorHover);
+}
+
+/*Footer style*/
+
+#footer {
+    background-color: var(--footer-background-color) ;
+}
+
+#footer .footer_disclaimer  a{
+    color: black!important;
+}
+
+
+
+@media (max-width: 579px ) {
+
+    .playerInnerCont {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-bottom: 50px !important;
+        padding: 0 !important;
+    }
+
+    .playerCont .btnCont {
+        width: 100%;
+    }
+
+    .playerCont button {
+        width: 160px;
+        padding: 2px;
+    }
+
+    .playlistCard {
+        width: 100%;
+
+    }
+
+    .songCard .title {
+        font-size: 0.9rem;
+    }
+
+    body .container {
+        margin-top: 380px !important;
+    }
+
+    body > .container ~ .container {
+        margin-top: 100px !important;
+    }
+
+    .playerCont .title {
+
+        margin-top: -40px;
+        float: right;
+
+        color: rgba(106, 106, 106, 0.58);
+        font-size: 14px;
+    }
+
+    .playerCont {
+        margin-top: -32px !important;
+    }
+
+}

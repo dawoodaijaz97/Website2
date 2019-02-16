@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playlist BL</title>
+    <link rel="stylesheet" type="text/css" href="../css/DWstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/hamburgers.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/SystemJs/jquery-3.2.1.js"></script>
+    <script src="../js/SystemJs/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="../js/SystemJs/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29991697-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+
+<body>	
+<nav class="navbar fixed-top navbar-expand-lg ">
+    <a class="navbar-brand">
+        <button class=" navbar-toggler  hamburger hamburger--squeeze is-active" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </a>
+    <div class="collapse navbar-collapse show" id="navbarNav">
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../musicPlayer.html">Music</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../creations.html">Creations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../people.html">The Person</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../news.html">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ProjectMN.html">M.N.</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ProjectBL.html">B.L.</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ProjectJBK.html">J.B.K.</a>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+<div id="container">
+<div class="playerCont" id="backgroundBL">
+    <!-- <div class="playerCont"> -->
+
+    <div class="playerInnerCont">
+
+
+        <div class="heading">
+            <p class="title">Photo (c)</p>
+            <p class="duration"></p>
+        </div>
+        <div class="wave">
+        </div>
+        <div class="btnCont">
+
+            <button id="backward"><i class="fas fa-backward"></i>Previous</button>
+            <button id="play" class="pause">Play/Pause <i class="fas fa-pause"></i></button>
+            <button id="forward">Next<i class="fas fa-forward"></i></button>
+            <button id="mute" class="soundOff">Toggle Mute<i class="fas fa-volume-up"></i></button>
+            <div id="slider"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="playlist" style="margin-top:  150px"> </div>    
+</div>
+
+<div class="container">
+    <div class="playlist" style="margin-top:  350px"> </div>      
+</div>
+
+
+
+
+
+
+
+<div id="footer">
+    <p class="footer_disclaimer">&copy; 2019 Dirk P. Haubrich - All Rights Reserved -<span><a href="../disclaimer.html">Disclaimer</a></span>
+    </p>
+</div>
+</div>
+<script src="../js/Scripts/classes.js"></script>
+<script src="../js/ProjectsJs/ProjectBL.js"></script>
+<script src="../js/Scripts/index.js"></script>
+<script src="../js/Scripts/playlist.js"></script>
+</body>
+</html>
