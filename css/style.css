@@ -7,7 +7,7 @@
     --body-background-image: linear-gradient(72deg, rgba(48, 58, 81, 0.96), #685762 90%) !important; /*body background color*/
     --container-background-image: linear-gradient(72deg, #649bb0 0%, rgba(48, 58, 81, 0.96) 73.18%); /*container background color*/
     --contaier-links-color: #000000; /*color of links inside container*/
-    --navbar-background-color: rgba(0, 0, 0, 0.4); /*background color of navbar*/
+    --navbar-background-color: rgba(0, 0, 0, 0.51); /*background color of navbar*/
     --navitem-hover-color:#c8c8c8; /*color of menu item when mouse hover*/
     --navlinks-color: #FFFFFF; /* color of navlink in menu */
     --navlinks-font-size:0.8rem;/*font size of navbar menu items*/
@@ -149,6 +149,12 @@ button:focus {
 
 @media (min-width: 1000px ) {
 
+
+    #container {
+        width: 90%;
+        margin: 0 auto 10px auto;
+    }
+
     .navbar {
         padding: 0 !important;
         height: 70px;
@@ -233,9 +239,6 @@ button:focus {
         padding: 20px 60px;
     }
 
-    #container {
-        width: 90%;
-        margin: 35px auto 10px;
-    }
+
 
 }

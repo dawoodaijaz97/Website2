@@ -1,6 +1,18 @@
 
 let autoplay = false;
 //
+let container = $(".playerCont");
+
+let sticky = container.get(0).offsetTop;
+
+function positioning() {
+    console.log("scrolling");
+    if (window.pageYOffset > sticky) {
+        container.addClass("sticky");
+    } else {
+        container.removeClass("sticky");
+    }
+}
 
 let createWave = function () {
     let waveSurfer = WaveSurfer.create({
@@ -91,6 +103,8 @@ var wave;
 
 $("document").ready(function () {
 
+    $(window).on("scroll",positioning);
+
     $("#slider").slider({
         range: "min",
         min: 0,
@@ -133,7 +147,7 @@ $("document").ready(function () {
 
 
     $(".container:eq(0)").css({
-        "margin-top": "270px"
+        "margin-top": "170px"
     });
 
     $("#forward").on("click", function () {

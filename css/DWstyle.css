@@ -92,16 +92,15 @@ body {
     right: 0;
     margin: auto;
     width: 100%;
-    padding: 40px 0;
+    padding-top: 60px;
     z-index: 100;
     background-position: center;
     background-size: cover;
-    clip-path: inset(0px 0px 80px 0px);
+    /*clip-path: inset(0px 0px 80px 0px);*/
 }
 .playerCont .playerInnerCont {
     width: 96%;
-    padding: 2%;
-    margin: 50px 0;
+    margin: 0 auto;
 }
 .playerCont .heading {
     height: 35px !important;
@@ -113,8 +112,6 @@ body {
     display: inline-block;
     font-family: 'Poiret One', cursive;
     margin-top: 0;
-    padding-top: -22px;
-    padding-left: 2px;
     color: var(--playerContainer-title-color);
     font-size: 22px;
 
