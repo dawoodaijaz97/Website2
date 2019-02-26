@@ -16,6 +16,7 @@
     --songCard-button-colorHover:rgba(119, 50, 50, 0.91); /*songCard button color when hovering */
 
     /*Player variables */
+    --playerContainer-backgroun-color: rgba(0, 0, 0, 0.46);
     --playerContainer-button-backgroundColor: rgba(104, 88, 98, 0.56); /*color of player buttons*/
     --playerContainer-buttonText-color:white; /*color of text inside player buttons*/
     --playerContainer-title-color:#ffffff;/*color of song name in player Container*/
@@ -33,14 +34,15 @@ body {
 
 }
 .container {
-    position: absolute;
-    width: 300px!important;
-    right: 60px;
+    /*width: 300px!important;*/
+    /*position: absolute;*/
+    /*left: 10px;*/
+    /*top: 75px!important;*/
+    /*padding: 0!important;*/
+    display: none;
 }
 
-.playlist {
-    padding-top: 100px;
-}
+
 
 
 
@@ -59,25 +61,24 @@ body {
 
 .playlistName {
     color: var(--playlistName-color);
-    font-size: 25px;
+    font-size: 18px;
     margin: 0;
     text-align: center;
 }
 
 .playlistDesc {
     color: var(--playlistDesc-color);
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 5px;
     text-align: center;
+    font-size: 18px;
+    display: none;
 }
 
 .playlistCard {
     height: auto;
     width: 85%;
-    max-height: 600px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--playlist-bottomBorder-color);
     margin: 0 auto;
+    padding: 0!important;
 }
 
 .meta {
@@ -99,21 +100,19 @@ body {
 
 /*player container styles*/
 
-.sticky {
-    position: fixed;
-    margin: 5% auto;
-    left: 0;
-    right: 0
-}
+
 
 .playerCont {
-    right: 0;
     width: 90%;
-    margin: 70px auto 0;
-    background-position: center;
+    margin: 0 auto;
+    background-color:var(--playerContainer-backgroun-color) ;
     background-size: cover;
-    padding-bottom: 20px;
     transition: postion,margin,transform,top 2s ease 0s;
+    position: fixed;
+    bottom:35px;
+    left: 0;
+    right: 0;
+    height: 100px;
 }
 
 .playerCont .playerInnerCont {
@@ -124,17 +123,15 @@ body {
 
 .playerCont .heading {
     background-color: transparent;
-
+    overflow:hidden;
+    height: 20px;
 }
 
 .playerCont .title {
 
-    display: inline-block;
-    padding-right: 7px;
-    padding-top: 7px;
     color: var(--playerContainer-title-color);
-    font-size: 22px;
-    float: right;
+    font-size: 18px;
+    text-align: center;
 }
 
 .playerCont .duration {
@@ -142,48 +139,52 @@ body {
     color: var(--playerContainer-duration-color );
     font-weight: 100;
     margin-top: auto;
-    margin-bottom: auto;
     transform: translateY(12px) translateX(-15px);
     float: right;
-    margin-right: 12px;
-    font-size: 16px;
+    font-size: 13px;
 
+}
+
+.playerCont .cont{
+    width: 80%;
+    margin: 0 auto;
 }
 
 .playerCont .wave {
 
     background-color: transparent;
+    display: inline-block;
 
 }
 
 .playerCont .btnCont {
     text-align: center;
-    height: auto!important;
+    display: inline-block;
+    padding: 10px;
+    float: left;
 }
 
-.playerCont button {
-    margin: 5px 2px;
+.playerCont .btnCont button {
     background-color: var(--playerContainer-button-backgroundColor);
     border: none;
-
     font-family: 'Optima', cursive;
     color: var(--playerContainer-buttonText-color);
-    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius:15px ;
 }
 
-.playerCont button:hover {
+.playerCont .btnCont button:hover {
     background-color: var(--playlistName-color);
     transition: background-color 300ms;
 }
 
-.playerCont button i {
-    padding: 0 16px;
+.playerCont .btnCont button i {
 }
 
 .wave {
-    height: 90px !important;
+    height: 50px !important;
     width: 80%;
-    margin: 0 auto;
 }
 .wave wave{
     overflow: visible!important;
@@ -229,10 +230,6 @@ body {
 
 #background2 {
     background: url("../images/background2.jpg") no-repeat center;
-}
-#transparent{
-
-    background-color: rgba(0, 0, 0, 0.24);
 }
 
 
@@ -300,6 +297,7 @@ body {
     .playerCont{
         position: fixed;
         width: 100%!important;
+        height: 25%;
         margin-top: 0px;
     }
 
@@ -311,6 +309,7 @@ body {
     }
     .playerCont .btnCont{
         width: 100%;
+        padding: 0;
     }
     .playerCont button {
         width: 160px;

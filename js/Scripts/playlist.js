@@ -1,18 +1,6 @@
-
 let autoplay = false;
 //
-let container = $(".playerCont");
 
-let sticky = container.get(0).offsetTop;
-
-function positioning() {
-    console.log("scrolling");
-    if (window.pageYOffset > sticky) {
-        container.addClass("sticky");
-    } else {
-        container.removeClass("sticky");
-    }
-}
 
 let createWave = function () {
     let waveSurfer = WaveSurfer.create({
@@ -20,18 +8,18 @@ let createWave = function () {
         hideScrollbar: true,//hide the scroll bar for the wave
         autoCenter: true,
         fillParent: true,
-        height: 80,//height for the wave
+        height: 50,//height for the wave
         progressColor: "#F5F5DC",//color of progress
         cursorColor: "#007066",//cursor color
-        waveColor: "#b3b3b3",
-       backend: 'MediaElement',
+        waveColor: "#525252",
+        backend: 'MediaElement',
         responsive: true,
 
     });
     waveSurfer.on('ready', function () {
         console.log("ready");
-            if (autoplay === false) {
-        autoplay = true;
+        if (autoplay === false) {
+            autoplay = true;
         } else {
 
             waveSurfer.play();
@@ -47,7 +35,7 @@ let createWave = function () {
     });
     waveSurfer.on("audioprocess", function () {
 
-        let progressPart="";
+        let progressPart = "";
         let totalPart = "";
         let tDuration = wave.getDuration();
         let tMin = Math.floor(tDuration / 60);
@@ -62,21 +50,21 @@ let createWave = function () {
         }
         let sec = Math.floor(progress % 60);
         if (sec < 10) {
-            progressPart = min+":0"+sec+"|";
+            progressPart = min + ":0" + sec + "|";
 
         }
-        else{
-            progressPart = min+":"+sec+"|";
+        else {
+            progressPart = min + ":" + sec + "|";
 
         }
-        if(tSec<10){
-            totalPart = tMin+":0"+tSec;
+        if (tSec < 10) {
+            totalPart = tMin + ":0" + tSec;
 
-        }else {
-            totalPart = tMin+":"+tSec;
+        } else {
+            totalPart = tMin + ":" + tSec;
         }
 
-        durationP.text(progressPart+totalPart);
+        durationP.text(progressPart + totalPart);
 
     });
     waveSurfer.on("stop", function () {
@@ -99,19 +87,16 @@ var setPlayer = function (track) {
 var wave;
 
 
-
-
 $("document").ready(function () {
 
-    $(window).on("scroll",positioning);
 
     $("#slider").slider({
         range: "min",
         min: 0,
         max: 1,
         value: 0.5,
-        step:0.01,
-        slide: function( event, ui ) {
+        step: 0.01,
+        slide: function (event, ui) {
             console.log(ui.value);
             wave.setVolume(ui.value);
             if (!$("#mute").hasClass("soundOff")) {
@@ -145,10 +130,13 @@ $("document").ready(function () {
         wave = createWave();
     }
 
+    let container = $(".container:eq(0)");
+    if (!container.attr("indexPlus")) {
+        container.css({
+            "margin-top": "170px"
+        });
+    }
 
-    $(".container:eq(0)").css({
-        "margin-top": "170px"
-    });
 
     $("#forward").on("click", function () {
 
@@ -248,9 +236,9 @@ var createPlaylistCard = function (playlist, i) {
         "</div>");
     card.find(".playlistName").text(playlist.name); //set title to playlist name
     card.find(".playlistImg").attr("src", playlist.imgUrl); //set the playlist image url
-    if(playlist.imgUrl === "#"){
+    if (playlist.imgUrl === "#") {
         card.find(".playlistImg").css({
-            display:"none"
+            display: "none"
         });
     }
     card.find(".playlistDesc").text("").text(playlist.text);
@@ -309,8 +297,8 @@ var createSongCard = function (playlistName, track, i) {
 
     });
 
-    card.on("click",function () {
-       $(this).find(".btn").trigger("click");
+    card.on("click", function () {
+        $(this).find(".btn").trigger("click");
     });
 
     return card;
